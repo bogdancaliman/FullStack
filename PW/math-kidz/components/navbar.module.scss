@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+  
+    justify-content: space-between;
+  
+    position: sticky;
+    position: -webkit-sticky;
+  
+    top: 0;
+  
+    color: white;
+    background-color: black;
+  }
+  
+  .span {
+    padding: 5px 10px;
+    margin: 5px;
+  
+    font-size: large;
+    font-weight: bold;
+  
+    a {
+      margin-left: 2rem;
+    }
+  }
+  

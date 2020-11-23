@@ -1,0 +1,29 @@
+.container {
+    min-height: 800px;
+    display: flex;
+  }
+  .sidebar_container {
+    display: inline-block;
+    width: 30%;
+  
+    padding: 2rem;
+  
+    margin-right: 1%;
+  
+    background-color: rgb(180, 180, 180);
+  }
+  .main_container {
+    display: inline-block;
+    width: 70%;
+  
+    background-color: rgb(231, 231, 231);
+  }
+  
+  .categorie:hover {
+    cursor: pointer;
+  }
+  
+  .link:hover {
+    cursor: pointer;
+  }
+  
