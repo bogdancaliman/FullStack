@@ -7,13 +7,13 @@ export default function PaginaCursuri() {
       <Cursuri>
         <div
           style={{
-            top: "50%",
+            top: "30%",
             position: "absolute",
             width: "50%",
             marginLeft: "auto",
           }}
         >
-          Alege un curs
+          <h1>Alege</h1>
         </div>
       </Cursuri>
     </Layout>

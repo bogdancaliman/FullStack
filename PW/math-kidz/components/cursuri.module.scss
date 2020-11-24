@@ -1,29 +1,42 @@
 .container {
-    min-height: 800px;
-    display: flex;
-  }
-  .sidebar_container {
-    display: inline-block;
-    width: 30%;
-  
-    padding: 2rem;
-  
-    margin-right: 1%;
-  
-    background-color: rgb(180, 180, 180);
-  }
-  .main_container {
-    display: inline-block;
-    width: 70%;
-  
-    background-color: rgb(231, 231, 231);
-  }
-  
-  .categorie:hover {
-    cursor: pointer;
-  }
-  
-  .link:hover {
-    cursor: pointer;
-  }
-  
+  min-height: 800px;
+  display: flex;
+}
+.sidebar_container {
+  display: inline-block;
+  border-radius: 10px 25px;
+  width: 22%;
+
+  padding: 2rem;
+
+  margin-right: 1%;
+
+  background-color: #111927;
+  color: #fff;
+}
+.main_container {
+  display: inline-block;
+  width: 75%;
+
+  background-color: rgb(231, 231, 231);
+}
+
+.categorie:hover {
+  cursor: pointer;
+  margin-left: 20px;
+  transform: scale(1.05);
+  color: rgb(57, 148, 223);
+  transform: scale(1.05);
+}
+
+.link:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+  color: rgb(97, 171, 255);
+}
+
+.curs_selectat {
+  font-weight: bold;
+  margin-left: 10px;
+  color: rgb(53, 181, 255);
+}

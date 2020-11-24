@@ -1,0 +1,48 @@
+$main-bg: #111927;
+$secondary-bg: #141d2b;
+$third-bg: #1a2332;
+
+$main-text: #fff;
+$second-text: #a4b1cd;
+
+$accent-main: #234cd3;
+
+.container {
+  display: block;
+  margin-bottom: 1rem;
+  min-height: 3rem;
+  max-width: 70%;
+  margin: auto;
+  margin-bottom: 5px;
+}
+
+.article {
+  background-color: $third-bg;
+
+  padding-left: 2rem;
+  padding-bottom: 0.5rem;
+  padding-right: 2rem;
+
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+
+  height: 100%;
+  width: 100%;
+
+  transition: 0.3s;
+  color: $main-text;
+}
+.article:hover {
+  border-color: $accent-main;
+
+  transition-timing-function: ease-in-out;
+
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+
+  color: $main-text;
+}
+
+.date {
+  color: $second-text;
+}

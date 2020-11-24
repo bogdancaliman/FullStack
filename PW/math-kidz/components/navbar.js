@@ -7,7 +7,11 @@ export default function NavBar() {
     <div className={styles.container}>
       <span className={styles.span}>
         <Link href="/">
-          <a>Math Kidz</a>
+          <a style={{marginLeft:0}}>
+            <img src="../math_icon.png" style={{width:"21px", height:"21px"}}></img>
+            <h5 style={{display:"inline"}}>ath Kidz</h5>
+          </a>
+          
         </Link>
         <Link href="/">
           <a>Acasa</a>

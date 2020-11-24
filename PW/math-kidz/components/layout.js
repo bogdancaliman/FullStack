@@ -7,10 +7,9 @@ export default function Layout({ children }) {
     <>
       <Head>
         <title>MathKids</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/math_icon.png" />
       </Head>
       <NavBar />
-
       <div className={styles.layout}>{children}</div>
     </>
   );
