@@ -23,7 +23,15 @@ export default function SignIn() {
           <br />
           <input type="text" id="fname" name="fname" />
           <br />
+          <label for="fname">E-mail:</label>
+          <br />
+          <input type="text" id="fname" name="fname" />
+          <br />
           <label for="lname">Password:</label>
+          <br />
+          <input type="password" id="lname" name="lname" />
+          <br />
+          <label for="lname">Confirm Password:</label>
           <br />
           <input type="password" id="lname" name="lname" />
           <br />
