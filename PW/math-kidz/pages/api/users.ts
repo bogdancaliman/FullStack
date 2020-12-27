@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
-export default function getUser(
+export default function getUsers(
   req: NextApiRequest,
   res: NextApiResponse
 ) {

@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
-export default function getAllCourses(
+export default function getAllCoursesByPersobId(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
