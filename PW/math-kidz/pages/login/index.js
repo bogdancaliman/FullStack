@@ -1,48 +1,97 @@
-import Link from "next/link";
 import Layout from "../../components/layout";
-export default function Home() {
+import Form from "react-bootstrap/Form";
+import Alert from "react-bootstrap/Alert";
+import Button from "react-bootstrap/Button";
+
+import { useState } from "react";
+
+import axios from "axios";
+
+export default function Login() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [displayAlert, setDisplayAlert] = useState(null);
+  const [alertText, setAlertText] = useState("");
+
+  function handleUsernameChange(e) {
+    setUsername(e.target.value);
+  }
+  function handlePasswordChange(e) {
+    setPassword(e.target.value);
+  }
+
+  function handleLogin(e) {
+    e.preventDefault();
+    // Request API.
+    axios
+      .post("http://localhost:1338/auth/local", {
+        identifier: username,
+        password: password,
+      })
+      .then((response) => {
+        // Handle success.
+        console.log("Well done!");
+        console.log("User profile", response.data.user);
+        console.log("User token", response.data.jwt);
+
+        setDisplayAlert("success");
+        setAlertText("Te-ai logat cu succes!");
+
+        setTimeout(() => {
+          setDisplayAlert(null);
+        }, 3000);
+      })
+      .catch((error) => {
+        // Handle error.
+        console.log("An error occurred:", error.response);
+
+        setDisplayAlert("danger");
+        setAlertText("A aparut o eroare");
+
+        setTimeout(() => {
+          setDisplayAlert(null);
+        }, 3000);
+      });
+  }
+
   return (
-    <Layout>
+    <Layout title="Login">
       <div
         style={{
           width: "50%",
-          margin: "auto",
-          textAlign: "center",
-          backgroundColor: "purple",
+          marginLeft: "auto",
+          marginRight: "auto",
+          marginTop: "5%",
+          marginBottom: "5%",
         }}
       >
-        <h1>Log In</h1>
-      </div>
-      <div
-        style={{
-          textAlign: "center",
-        }}
-      >
-        <form action="/action_page.php">
-          <label for="fname">Username:</label>
-          <br />
-          <input type="text" id="fname" name="fname" />
-          <br />
-          <label for="lname">Password:</label>
-          <br />
-          <input type="password" id="lname" name="lname" />
-          <br />
-          <br />
-          <input type="submit" value="Submit" />
-        </form>
-      </div>
-      <div
-        style={{
-          marginTop: "3%",
-          textAlign: "center",
-        }}
-      >
-        <p>Daca nu ai un cont inscriete aici</p>
-        <Link href="/login/signin">
-          <a>
-            <input type="submit" value="Sign In" />
-          </a>
-        </Link>
+        <Form style={{ marginBottom: "5%" }}>
+          <Form.Group controlId="formBasicUsername">
+            <Form.Label>Username</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Username"
+              onChange={handleUsernameChange}
+              value={username}
+            />
+          </Form.Group>
+
+          <Form.Group controlId="formBasicPassword">
+            <Form.Label>Parola</Form.Label>
+            <Form.Control
+              type="password"
+              placeholder="Parola"
+              onChange={handlePasswordChange}
+              value={password}
+            />
+          </Form.Group>
+          <Button variant="primary" type="submit" onClick={handleLogin}>
+            Login
+          </Button>
+        </Form>
+        {displayAlert ? (
+          <Alert variant={displayAlert}>{alertText}</Alert>
+        ) : null}
       </div>
     </Layout>
   );

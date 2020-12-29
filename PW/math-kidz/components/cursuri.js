@@ -62,7 +62,7 @@ function Categorie({ nume, deschis = false }) {
     ));
   }
   return (
-    <div>
+    <>
       <h2
         className={styles.categorie}
         onClick={() => setAratCursuri(!aratCursuri)}
@@ -70,7 +70,7 @@ function Categorie({ nume, deschis = false }) {
         {nume}
       </h2>
       <ul>{aratCursuri && showCursuri()}</ul>
-    </div>
+    </>
   );
 }
 
