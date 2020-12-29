@@ -1,8 +1,9 @@
 -- Up
 CREATE TABLE User (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT,
-    email TEXT
+    username TEXT,
+    email TEXT,
+    password TEXT
 );
 
 CREATE TABLE Course (
@@ -12,10 +13,11 @@ CREATE TABLE Course (
     ownerId INTEGER REFERENCES User(id)
 );
 
-INSERT INTO User (name, email) values ('bruno', 'bruno@email.com');
-INSERT INTO User (name, email) values ('jack', 'jack@email.com');
+INSERT INTO User (username, email, password) values ('bruno', 'bruno@email.com', 'ceva');
+INSERT INTO User (username, email, password) values ('jack', 'jack@email.com', 'ceva');
 
 INSERT INTO Course (brand,model,ownerId) values ('audi', 'R8',1);
+INSERT INTO Course (brand,model,ownerId) values ('audi', 'R6',1);
 INSERT INTO Course (brand,model,ownerId) values ('mercedes', 'benz',2);
 
 -- Down

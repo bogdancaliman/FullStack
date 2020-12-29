@@ -36,7 +36,7 @@ export default function SignIn() {
           <input type="password" id="lname" name="lname" />
           <br />
           <br />
-          <input type="submit" value="Sign In" />
+          <input type="submit" value="Sign Up" />
           <br />
           <br />
           <Link href="/login">

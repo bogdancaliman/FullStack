@@ -16,7 +16,7 @@ async function setup() {
   });
 
   const users = await db.all("SELECT * FROM User");
-  console.log("all person", JSON.stringify(users, null, 2));
+  console.log("all users", JSON.stringify(users, null, 2));
 
   const course = await db.all(`SELECT a.*, b.* FROM User as a
   LEFT JOIN Course as b

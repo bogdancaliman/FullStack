@@ -1,8 +1,19 @@
 import { NextApiRequest, NextApiResponse } from "next";
+const sqlite3 = require("sqlite3");
+const sqlite = require("sqlite");
 
-export default function getUsers(
+async function openDb() {
+  return sqlite.open({
+    filename: "./database.db",
+    driver: sqlite3.Database,
+  });
+}
+
+export default async function getUsers(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  res.json([{name: 'Marian'},{name: 'Ion'},{name:'Andrei'}]);
+  const db = await openDb();
+  const users = await db.all("select * from user");
+  res.json(users);
 }
