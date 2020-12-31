@@ -2,6 +2,7 @@ import Layout from "../../components/layout";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Alert from "react-bootstrap/Alert";
+import Link from "next/link";
 
 import { useState } from "react";
 
@@ -107,6 +108,9 @@ export default function Register() {
         {displayAlert ? (
           <Alert variant={displayAlert}>{alertText}</Alert>
         ) : null}
+        <Link href="/login">
+          <a>&#x2190; Inapoi la Logare</a>
+        </Link>
       </div>
     </Layout>
   );

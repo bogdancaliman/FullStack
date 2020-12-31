@@ -2,6 +2,7 @@ import Layout from "../../components/layout";
 import Form from "react-bootstrap/Form";
 import Alert from "react-bootstrap/Alert";
 import Button from "react-bootstrap/Button";
+import Link from "next/link";
 
 import { useState } from "react";
 
@@ -92,6 +93,13 @@ export default function Login() {
         {displayAlert ? (
           <Alert variant={displayAlert}>{alertText}</Alert>
         ) : null}
+
+        <p style={{ display: "inline", marginRight: 10 }}>
+          Daca nu ai cont apasa aici
+        </p>
+        <Link href="/signin">
+          <a>Inregistreaza-te</a>
+        </Link>
       </div>
     </Layout>
   );
