@@ -1,7 +1,13 @@
 import Layout from "../../components/layout";
 import Cursuri from "../../components/cursuri";
+import { DiscussionEmbed } from "disqus-react";
 
 export default function Adunare() {
+  let numeUtilizator = null;
+
+  if (typeof localStorage !== "undefined") {
+    numeUtilizator = JSON.parse(localStorage.getItem("user")).username;
+  }
   return (
     <Layout>
       <Cursuri deschis="Clasa I">
@@ -385,6 +391,17 @@ export default function Adunare() {
           </ul>
         </div>
       </Cursuri>
+      <DiscussionEmbed
+      shortname={numeUtilizator}
+      config={
+        {
+            url: "http://localhost:3001",
+            identifier: "http://localhost:3001/cursuri/Adunare",
+            title: "Adunare",
+            language: 'en' //e.g. for Traditional Chinese (Taiwan)	
+        }
+      }
+      />
     </Layout>
   );
 }

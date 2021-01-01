@@ -1,0 +1,17 @@
+
+
+$hue-neutral: 200;
+$hue-wrong: 0;
+$hue-correct: 145;
+
+
+.body{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl($hue-neutral, 100%, 20%);
+}

@@ -1,10 +1,16 @@
 import Layout from "../../components/layout";
 import Cursuri from "../../components/cursuri";
-
+import isAuthenticated from "../../utils/auth"
 export default function PaginaCursuri() {
+   let numeUtilizator = null;
+
+  if (typeof localStorage !== "undefined") {
+    numeUtilizator = JSON.parse(localStorage.getItem("user")).username;
+  }
   return (
     <Layout>
-      <Cursuri>
+      {
+        isAuthenticated()?<Cursuri>
         <div
           style={{
             top: "30%",
@@ -13,9 +19,10 @@ export default function PaginaCursuri() {
             marginLeft: "auto",
           }}
         >
-          <h1>Alege</h1>
+          <h1>Alege un curs, {numeUtilizator}</h1>
         </div>
-      </Cursuri>
+      </Cursuri>:<p>Logheaza-te ca sa vezi cursurile</p>
+      }
     </Layout>
   );
 }

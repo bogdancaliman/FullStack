@@ -38,6 +38,9 @@ export default function Login() {
         setDisplayAlert("success");
         setAlertText("Te-ai logat cu succes!");
 
+        localStorage.setItem("auth", response.data.jwt);
+        localStorage.setItem("user", JSON.stringify(response.data.user));
+
         setTimeout(() => {
           setDisplayAlert(null);
         }, 3000);
